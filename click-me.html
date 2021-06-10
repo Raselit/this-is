@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn{
+            display: inline-block;
+            font-size: 42px;
+            background: brown;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+        }
+        .btn::before{
+            content: "";
+            position: absolute;
+            background: teal;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            z-index: -1;
+            transition: .4s;
+            visibility: hidden;
+        }
+        .btn:hover::before{
+            width: 100%;
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn">Click me</div>
+    </div>
+</body>
+</html>
